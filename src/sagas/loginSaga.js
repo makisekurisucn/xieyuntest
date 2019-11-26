@@ -8,7 +8,6 @@ function* login(action) {
         url: '/api/login'
     }
     let response = yield call(request, requestConfig);
-    console.log('response in saga: ', response);
 
     if (response.success) {
         localStorage.setItem('token', response.token);

@@ -2,62 +2,62 @@
     position: relative;
     width: 120px;
     outline: none;
-}
 
-.select_display {
-    height: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 0px 5px;
-}
+    .select_display {
+        height: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 0px 5px;
 
-.select_display:hover {
-    border: 1px solid #40a9ff;
-    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
-}
+        &:hover {
+            border: 1px solid #40a9ff;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+        }
 
-.select_display_focus {
-    border: 1px solid #40a9ff;
-    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
-}
+        .select_arrow {
+            transition: all .2s ease;
+        }
 
-.select_arrow {
-    transition: all .2s ease;
-}
+        .select_arrow_rotate {
+            transform: rotate(180deg);
+        }
+    }
 
-.select_arrow_rotate {
-    transform: rotate(180deg);
-}
+    .select_display_focus {
+        border: 1px solid #40a9ff;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    }
 
-.select_list {
-    position: absolute;
-    top: 31px;
-    width: 120px;
-    height: 0px;
-    overflow: hidden;
-    transition: all .2s ease;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+    .select_list {
+        position: absolute;
+        top: 31px;
+        width: 120px;
+        height: 0px;
+        overflow: hidden;
+        transition: all .2s ease;
+        border-radius: 4px;
+        box-sizing: border-box;
 
-.select_list_show {
-    height: auto;
-    // border: 1px solid #bebcbc;
-    box-shadow: 0 0 0 1px rgba(158, 161, 163, 0.2);
-}
+        .select_option {
+            height: 25px;
+            padding: 0px 5px;
+            cursor: pointer;
+            background-color: white;
 
-.select_option {
-    height: 25px;
-    padding: 0px 5px;
-    cursor: pointer;
-    background-color: white;
-}
+            &:hover {
+                background-color: rgba(226, 242, 255, 1);
+            }
+        }
+    }
 
-.select_option:hover {
-    background-color: rgba(226, 242, 255, 0.8);
+    .select_list_show {
+        height: auto;
+        // border: 1px solid #bebcbc;
+        box-shadow: 0 0 0 1px rgba(158, 161, 163, 0.2);
+    }
 }

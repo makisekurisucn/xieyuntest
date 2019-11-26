@@ -7,13 +7,6 @@ function* getList(action) {
         url: '/api/list'
     }
     let response = yield call(request, requestConfig);
-    console.log('response in listsaga: ', response);
-
-    // if (response.success) {
-    //     setToken(response.token);
-    // } else {
-    //     setToken('');
-    // }
 
     yield put({
         type: "LIST_UPDATE",

@@ -37,14 +37,12 @@ class List extends React.Component {
     render() {
         const { list = [] } = this.props;
         const { month = [], week = [] } = list;
-        console.log(list);
-        console.log([this.state.selectedKey]);
-        console.log(list[this.state.selectedKey]);
+        
 
         return (
             <div className='list_root'>
-                this is list page
-                <div>
+                <h2>列表页面</h2>
+                <div className='list_container'>
 
                     <Select switchIndex={this.handleSwitch} list={Object.keys(list)} />
                     <ul>

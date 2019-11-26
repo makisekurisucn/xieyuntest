@@ -37,6 +37,8 @@ class Login extends React.Component {
 
         return (
             <div className='login_root'>
+                <h2>登录页面</h2>
+                <h3>'/'和'login'为登录页面，'/list'为列表页面</h3>
                 <div className='login_container'>
                     <div className='login_header'>用户登录</div>
                     <div className='login_main'>
@@ -50,7 +52,7 @@ class Login extends React.Component {
                         </div>
                         <div className='login_button' onClick={this.submit}>登录</div>
                         {
-                            isError ? <div className='login_inputError'>用户名或验证码有误，请重新输入!</div> : null
+                            isError ? <div className='login_inputError'>用户名或密码有误，请重新输入!</div> : null
                         }
                     </div>
                 </div>
@@ -61,13 +63,19 @@ class Login extends React.Component {
 }
 
 class IsLogin extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidUpdate() {
+        if (this.props.login.isLogin) {
+            this.props.history.push('/list')
+        }
+    }
+
     render() {
         const { login, dispatch } = this.props;
-        if (login.isLogin) {
-            return <List />;
-        } else {
-            return <Login dispatch={dispatch} login={login} />;
-        }
+        return <Login dispatch={dispatch} login={login} />;
     }
 }
 

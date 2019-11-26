@@ -1,8 +1,20 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.scss';
-import List from './containers/list/index.jsx';
-import Login from './containers/login/index.jsx';
+import LazyLoad from './lazyLoad';
+
+const Login = (props) => (
+    <LazyLoad load={() => import('./containers/login/index.jsx')}>
+        {(Login) => <Login {...props} />}
+    </LazyLoad>
+);
+
+const List = (props) => (
+    <LazyLoad load={() => import('./containers/list/index.jsx')}>
+        {(List) => <List {...props} />}
+    </LazyLoad>
+);
+
 
 function App() {
     return (
